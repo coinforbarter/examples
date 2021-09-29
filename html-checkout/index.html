@@ -1,0 +1,65 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoinForBarter HTML CHECKOUT</title>
+    <style>
+        .coinforbarter-example-form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .coinforbarter-example-form input {
+            display: block;
+            margin: 20px;
+            width: 100%;
+            padding: 20px;
+        }
+
+
+
+        .coinforbarter-example-form button {
+            display: block;
+            margin: 20px;
+            padding: 20px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid black;
+        }
+
+        .coinforbarter-example-form button:hover {
+            background: rgba(0, 0, 0);
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+
+<body>
+    <!-- Adding target blank to make users pay in a different tab without leaving my page -->
+    <form class="coinforbarter-example-form" method="POST" target="_blank"
+        action="https://checkout.coinforbarter.com/v1">
+        <input type="hidden" name="publicKey" value="xxxxxxxxxxxxxxxxxxxxxxxxxx" />
+        <!-- Change email type to hidden if you prefer to not let the customers type in emails-->
+        <input type="email" name="customer" required value="jessepinkman@walterwhite.org" />
+        <input type="hidden" name="customerPhoneNumber" value="0900192039940" />
+        <input type="hidden" name="customerFullName" value="Jesse Pinkman" />
+        <input type="hidden" name="txRef" value="bitethtx-019203" />
+        <input type="hidden" name="amount" value="100" />
+        <input type="hidden" name="currency" value="USD" />
+        <!-- I am leaving the currencies empty so i can accept all -->
+        <!-- <input type="hidden" name="currencies[]" value="DOGE" /> -->
+        <!-- Uncomment below to use the options -->
+        <!-- <input type="hidden" name="customizations[title]" value="Miss TryPad" />
+        <input type="hidden" name="customizations[description]" value="Buy try pads" />
+        <input type="hidden" name="redirectUrl" value="https://example.com/" /> -->
+        <button type="submit">Pay $100</button>
+    </form>
+</body>
+
+</html>
